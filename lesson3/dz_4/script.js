@@ -1,30 +1,52 @@
 'use strict'
 
-function sum(a, b) {
-    return a + b;
-}
+const products = [
+    {
+        id: 3,
+        price: 127,
+        photos: [
+            "1.jpg",
+            "2.jpg",
+        ]
+    },
+    {
+        id: 5,
+        price: 499,
+        photos: []
+    },
+    {
+        id: 10,
+        price: 26,
+        photos: [
+            "3.jpg"
+        ]
+    },
+    {
+        id: 8,
+        price: 78,
+    },
+];
 
-function minus(a, b) {
-    return a - b;
-}
 
-function mul(a, b) {
-    return a * b;
-}
+// 1 Получить все товары, у которых есть фотографии, можете использовать метод filter
+let foto = products.filter(fotos => {
+    return fotos.photos && fotos.photos !== null;
+})
 
-function divide(a, b) {
-    return a / b;
-}
+console.log(foto);
 
 
-let resultSum = sum(4, 3);
-console.log(resultSum);
+// Отсортируйте товары по цене (от низкой цены к высокой), можете использовать метод sort
 
-let resultMinus = minus(4, 3);
-console.log(resultMinus);
+foto.sort(function (word1, word2) {
+    if (word2.price > word1.price) {
+        return -1;
+    }
 
-let resultMul = mul(4, 3);
-console.log(resultMul);
+    if (word1.price > word2.price) {
+        return 1;
+    }
 
-let resultDivide = divide(4, 3);
-console.log(resultDivide);
+    return 0
+})
+console.log(foto);

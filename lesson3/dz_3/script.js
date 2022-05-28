@@ -1,12 +1,23 @@
 'use strict'
 
-let a = 5;
-let b = 6;
+const products = [
+    {
+        id: 3,
+        price: 200,
+    },
+    {
+        id: 4,
+        price: 900,
+    },
+    {
+        id: 1,
+        price: 1000,
+    },
+];
 
-if (a >= 0 || b >= 0) {
-    console.log(a - b);
-} else if (a < 0 || b < 0) {
-    console.log(a * b);
-} else if ((a < 0 && b > 0) || (a > 0 && b < 0)) {
-    console.log(a + b);
-};
+
+products.forEach(product => {
+    product.price = parseInt(product.price * 1.15);
+})
+
+console.log(products);
