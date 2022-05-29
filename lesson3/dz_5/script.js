@@ -1,6 +1,6 @@
 'use strict'
 
-let anw = prompt('Введите сколько денег зачислить');
+for (let i = 0; i < 10; console.log(i++)) { }
 
 
 
