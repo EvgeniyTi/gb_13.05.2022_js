@@ -1,11 +1,36 @@
 'use strict'
 
-for (let i = 0; i <= 10; i++) {
-    if (i == 0) {
-        console.log(`${i} - это ноль`);
-    } else if (i % 2 == 0) {
-        console.log(`${i} - это четное число`);
-    } else {
-        console.log(`${i} - это нечетное число`);
+//es5 
+function Product(name, price) {
+    this.name = name;
+    this.price = price;
+}
+
+Product.prototype.make25PercentDicount = function () {
+    this.price = this.price / 1.25;
+
+}
+
+const products5 = new Product('греча', 1000);
+
+products5.make25PercentDicount();
+console.log(products5);
+
+
+//es6
+
+class Product1 {
+    constructor(name, price) {
+        this.name = name;
+        this.price = price;
+    }
+
+    make25PercentDicount1() {
+        this.price = this.price / 1.25;
     }
 }
+
+const products = new Product1('греча', 1000);
+
+products.make25PercentDicount1();
+console.log(products);
